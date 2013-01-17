@@ -72,3 +72,11 @@ Artisan Commands
 They're not implemented yet, but compiling .less files from Artisan is on the to-do 
 list.
 
+
+
+Credits
+=======
+
+Less4Laravel doesn't exist without Leaf Corcoran's [lessphp](http://leafo.net/lessphp/).  lessphp doesn't exist without 
+[LESS](http://lesscss.org/). Less4Laravel also requires [Laravel](http://laravel.com/). The readme is largely boosted from
+Rob Crowe's readme for (the very awesome) [TwigBridge](https://github.com/rcrowe/TwigBridge).
