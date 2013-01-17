@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 
 class Less {
-	public function css($filename) {
+	public function to($filename) {
 		$compiler = new lessc;
 		$root = App::make('path')."/../";
 		$in = $root.Config::get('less4laravel::source_folder')."/".$filename.".less";
