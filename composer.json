@@ -1,0 +1,25 @@
+{
+    "name": "jtgrimes/less4laravel",
+    "description": "Bringing lessphp into Laravel",
+    "authors": [
+        {
+            "name": "J.T. Grimes",
+            "email": "jtgrimes@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x",
+		"leafo/lessphp": "*"
+
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Jtgrimes\\Less4laravel": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
