@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Jtgrimes\\Less4laravel": "src/"
+            "jtgrimes\\Less4laravel": "src/"
         }
     },
     "minimum-stability": "dev"

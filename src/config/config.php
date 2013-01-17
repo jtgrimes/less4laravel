@@ -46,7 +46,7 @@ return array(
      | When we generate a link to the css file, where should it point?
      | default: /css
      */
-    'link_folder' => '/l4l/css',
+    'link_folder' => '/css',
 
 
 );
