@@ -20,7 +20,7 @@ Add `jtgrimes\less4laravel` as a requirement to composer.json:
 Update your packages with `composer update` or install with `composer install`.
 
 Once Composer has installed or updated your packages you need to register 
-Less4Laravel with Laravel itself. Open up app/config/app.php and 
+Less4Laravel with Laravel itself. Open up `app/config/app.php` and 
 find the providers key towards the bottom and add:
 
 ```php
@@ -51,7 +51,7 @@ a recompile.)
 * Store generated .css files in public/css
 * Link to /css/filename.css
 
-All of these defaults can be changed in /app/config/packages/jtgrimes/less4laravel.php.
+All of these defaults can be changed in `/app/config/packages/jtgrimes/less4laravel.php`.
 
 Additionally you can (and probably should) have different configurations for development 
 and production.  Specifically, you probably don't want to be generating css files on
@@ -61,7 +61,7 @@ your production server, since it will slow down your site.
 Usage
 =====
 
-In your view file, just call Less:css('file') to compile the .less file (if needed)
+In your view file, just call `Less:css('file')` to compile the .less file (if needed)
 and generate a link to the output css file.
 
 
