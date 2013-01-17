@@ -2,24 +2,26 @@
 
 use lessc;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Config;
 
 class Less {
-	function less($filename) {
+	public function css($filename) {
 		$compiler = new lessc;
 		$root = App::make('path')."/../";
-		$in = $root.Config::get('less4laravel::source')."/".$filename.".less";
-		$out = $root.Config::get('less4laravel::target')."/".$filename.".css";
+		$in = $root.Config::get('less4laravel::source_folder')."/".$filename.".less";
+		$out = $root.Config::get('less4laravel::target_folder')."/".$filename.".css";
+        $link= Config::get('less4laravel::link_folder')."/".$filename.".css";
 		switch(Config::get('less4laravel::compile_frequency')) {
 			case "all":
-				lessc->compileFile($in, $out);
+				$compiler->compileFile($in, $out);
 				break;
 			case "changed":
-				lessc->checkedCompile($in, $out);
+                $compiler->checkedCompile($in, $out);
 				break;
 			case "none":
 			default:
 				// do nothing
 		}
-		return '<link rel="stylesheet" href="'.$out.'">';
+		return '<link rel="stylesheet" href="'.$link.'">';
 	}
 }

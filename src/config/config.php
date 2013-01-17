@@ -38,4 +38,15 @@ return array(
 	*/
 	'target_folder' => 'public/css',
 
+    /*
+     |--------------------------------------------------------------------------
+     | Link folder
+     |--------------------------------------------------------------------------
+     |
+     | When we generate a link to the css file, where should it point?
+     | default: /css
+     */
+    'link_folder' => '/l4l/css',
+
+
 );

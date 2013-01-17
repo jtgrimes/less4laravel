@@ -28,7 +28,10 @@ class LessServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//
+		$this->app['less'] = $this->app->share(function($app)
+		{
+			return new Less;
+		});
 	}
 
 	/**
@@ -38,7 +41,7 @@ class LessServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array();
+		return array('less');
 	}
 
 }
