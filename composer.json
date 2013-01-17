@@ -1,6 +1,8 @@
 {
     "name": "jtgrimes/less4laravel",
     "description": "Bringing lessphp into Laravel",
+	"keywords": ["laravel","less"],
+	"license": "MIT",
     "authors": [
         {
             "name": "J.T. Grimes",
