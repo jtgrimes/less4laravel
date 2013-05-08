@@ -12,7 +12,7 @@ Add `jtgrimes\less4laravel` as a requirement to composer.json:
 ```javascript
 {
     "require": {
-        "jtgrimes/less4laravel": "0.1.*"
+        "Jtgrimes/less4laravel": "0.1.*"
     }
 }
 ```
@@ -24,13 +24,13 @@ Less4Laravel with Laravel itself. Open up `app/config/app.php` and
 find the providers key towards the bottom and add:
 
 ```php
-'jtgrimes\Less4laravel\LessServiceProvider'
+'Jtgrimes\Less4laravel\LessServiceProvider'
 ```
 
 In the aliases section, add:
 
 ```php
-'Less'	=>	'jtgrimes\Less4laravel\LessFacade'
+'Less'	=>	'Jtgrimes\Less4laravel\LessFacade'
 ```
 
 Configuration
@@ -40,7 +40,7 @@ In order to work with the configuration file, you're best off publishing a copy
 with Artisan:
 
 ```
-$ php artisan config:publish jtgrimes/less4laravel
+$ php artisan config:publish Jtgrimes/less4laravel
 ```
 
 The defaults are:
@@ -51,7 +51,7 @@ a recompile.)
 * Store generated .css files in public/css
 * Link to /css/filename.css
 
-All of these defaults can be changed in `/app/config/packages/jtgrimes/less4laravel.php`.
+All of these defaults can be changed in `/app/config/packages/Jtgrimes/less4laravel.php`.
 
 Additionally you can (and probably should) have different configurations for development 
 and production.  Specifically, you probably don't want to be generating css files on
