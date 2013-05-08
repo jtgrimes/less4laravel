@@ -1,4 +1,4 @@
-<?php namespace jtgrimes\Less4laravel;
+<?php namespace Jtgrimes\Less4laravel;
 
 use Illuminate\Support\Facades\Facade;
 

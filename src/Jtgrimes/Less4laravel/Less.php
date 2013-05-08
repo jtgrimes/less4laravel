@@ -1,4 +1,4 @@
-<?php namespace jtgrimes\Less4laravel;
+<?php namespace Jtgrimes\Less4laravel;
 
 use lessc;
 use Illuminate\Support\Facades\App;
