@@ -61,7 +61,7 @@ your production server, since it will slow down your site.
 Usage
 =====
 
-In your view file, just call `Less:to('file')` to compile the .less file (if needed)
+In your view file, just call `Less::to('file')` to compile the .less file (if needed)
 and generate a link to the output css file.
 
 
