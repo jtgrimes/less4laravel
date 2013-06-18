@@ -40,7 +40,7 @@ In order to work with the configuration file, you're best off publishing a copy
 with Artisan:
 
 ```
-$ php artisan config:publish Jtgrimes/less4laravel
+$ php artisan config:publish jtgrimes/less4laravel
 ```
 
 The defaults are:
