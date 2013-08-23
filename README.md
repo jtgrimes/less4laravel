@@ -1,3 +1,10 @@
+**The newest release may break compatibility with older versions.**
+If your CSS isn't displaying, please check the `link_folder` variable in your config file.  The new version 
+uses Laravel's HtmlBuilder class to create the link to the CSS file and is "smarter" than previous versions.  If you
+had to fiddle with the link_folder before, you may be able to un-fiddle it now.
+
+
+
 Less4Laravel
 ============
 
@@ -12,7 +19,7 @@ Add `jtgrimes\less4laravel` as a requirement to composer.json:
 ```javascript
 {
     "require": {
-        "Jtgrimes/less4laravel": "0.1.*"
+        "Jtgrimes/less4laravel": "0.2.*"
     }
 }
 ```
@@ -63,6 +70,10 @@ Usage
 
 In your view file, just call `Less::to('file')` to compile the .less file (if needed)
 and generate a link to the output css file.
+
+To add properties to your link, just put them in an array as the second variable to the `to` function:
+`Less::to('filename',array('media'=>'print'))` will 
+generate `<link media="print" type="text/css" rel="stylesheet" href="http://localhost/css/filename.css">`
 
 
 
