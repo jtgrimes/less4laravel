@@ -1,17 +1,26 @@
 <?php namespace Jtgrimes\Less4laravel;
 
 use lessc;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Config;
+use Illuminate\Config\Repository as Config;
+use Illuminate\Html\HtmlBuilder as Html;
 
 class Less {
-	public function to($filename) {
+	var $config;
+	var $builder;
+
+	public function __construct(Config $config, Html $builder) {
+		$this->config = $config;
+		$this->builder = $builder;
+	}
+
+	public function to($filename, $attributes=array()) {
 		$compiler = new lessc;
-		$root = App::make('path')."/../";
-		$in = $root.Config::get('less4laravel::source_folder')."/".$filename.".less";
-		$out = $root.Config::get('less4laravel::target_folder')."/".$filename.".css";
-        $link= Config::get('less4laravel::link_folder')."/".$filename.".css";
-		switch(Config::get('less4laravel::compile_frequency')) {
+		$basePath = base_path();
+		$sourceFolder = $this->config->get('less4laravel::source_folder');
+		$targetFolder = $this->config->get('less4laravel::target_folder');
+		$in = "$basePath/$sourceFolder/$filename.less";
+		$out = "$basePath/$targetFolder/$filename.css";
+		switch($this->config->get('less4laravel::compile_frequency')) {
 			case "all":
 				$compiler->compileFile($in, $out);
 				break;
@@ -22,6 +31,7 @@ class Less {
 			default:
 				// do nothing
 		}
-		return '<link rel="stylesheet" href="'.$link.'">';
+		$linkFolder = $this->config->get('less4laravel::link_folder');
+		return $this->builder->style("$linkFolder/$filename.css",$attributes);
 	}
 }

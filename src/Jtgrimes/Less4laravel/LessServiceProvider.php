@@ -19,6 +19,12 @@ class LessServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('jtgrimes/less4laravel');
+		$this->app['less'] = $this->app->share(function($app)
+		{
+			$config = $app['config'];
+			$builder = $app['html'];
+			return new Less($config,$builder);
+		});
 	}
 
 	/**
@@ -28,10 +34,6 @@ class LessServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app['less'] = $this->app->share(function($app)
-		{
-			return new Less;
-		});
 	}
 
 	/**
