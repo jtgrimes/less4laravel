@@ -15,6 +15,7 @@ class Less {
 
 	public function to($filename, $attributes=array()) {
 		$compiler = new lessc;
+        $compiler->setFormatter($this->config->get('less4laravel::formatter','lessjs'));
 		$basePath = base_path();
 		$sourceFolder = $this->config->get('less4laravel::source_folder');
 		$targetFolder = $this->config->get('less4laravel::target_folder');

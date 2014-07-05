@@ -1,10 +1,3 @@
-**The newest release may break compatibility with older versions.**
-If your CSS isn't displaying, please check the `link_folder` variable in your config file.  The new version 
-uses Laravel's HtmlBuilder class to create the link to the CSS file and is "smarter" than previous versions.  If you
-had to fiddle with the link_folder before, you may be able to un-fiddle it now.
-
-
-
 Less4Laravel
 ============
 
@@ -51,12 +44,14 @@ $ php artisan config:publish jtgrimes/less4laravel
 ```
 
 The defaults are:
+
 * Recompile whenever the .less file is updated.  (Recompilation only happens when the
 named file is changed.  If other files are imported, changing them will *not* trigger
 a recompile.)
 * Store .less files in app/less
 * Store generated .css files in public/css
 * Link to /css/filename.css
+* Don't minify the generated css file
 
 All of these defaults can be changed in `/app/config/packages/Jtgrimes/less4laravel.php`.
 
@@ -68,8 +63,7 @@ your production server, since it will slow down your site.
 Usage
 =====
 
-In your view file, just call `Less::to('file')` to compile the .less file (if needed)
-and generate a link to the output css file.
+In your view file, just call `Less::to('file')` to compile the .less file (if needed) and generate a link to the output css file.
 
 To add properties to your link, just put them in an array as the second variable to the `to` function:
 `Less::to('filename',array('media'=>'print'))` will 
@@ -80,14 +74,12 @@ generate `<link media="print" type="text/css" rel="stylesheet" href="http://loca
 Artisan Commands
 ================
 
-They're not implemented yet, but compiling .less files from Artisan is on the to-do 
-list.
+They're not implemented yet, but compiling .less files from Artisan is on the to-do list.
 
 
 
 Credits
 =======
 
-Less4Laravel doesn't exist without Leaf Corcoran's [lessphp](http://leafo.net/lessphp/).  lessphp doesn't exist without 
-[LESS](http://lesscss.org/). Less4Laravel also requires [Laravel](http://laravel.com/). The readme is largely boosted from
-Rob Crowe's readme for (the very awesome) [TwigBridge](https://github.com/rcrowe/TwigBridge).
+Less4Laravel doesn't exist without Leaf Corcoran's [lessphp](http://leafo.net/lessphp/).  
+lessphp doesn't exist without [LESS](http://lesscss.org/). Less4Laravel also requires [Laravel](http://laravel.com/). The readme is largely boosted from Rob Crowe's readme for (the very awesome) [TwigBridge](https://github.com/rcrowe/TwigBridge).
