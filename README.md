@@ -4,7 +4,11 @@ Less4Laravel
 Allows you to use [Less](http://lesscss.org//) in [Laravel 5](http://laravel.com/) with
 no fuss, no muss.
 
-Documentation for using Less4Laravel with Laravel 4 is in the [README_L4.md](README_L4.md) file.
+----------
+## If you're still using Laraavel 4, please lock your composer version to `'~0.3'`. Check out the  [README_L4.md](README_L4.md) file for more Laravel 4 instructions ##
+
+----------
+
 
 License
 ==========
@@ -24,15 +28,15 @@ Once Composer has installed or updated your packages you need to register
 Less4Laravel with Laravel itself. Open up `/config/app.php` and
 find the providers key towards the bottom and add:
 
-```php
+````
 'Jtgrimes\Less4laravel\LessServiceProvider'
-```
+````
 
 In the aliases section, add:
 
-```php
+````
 'Less'	=>	'Jtgrimes\Less4laravel\LessFacade'
-```
+````
 
 Configuration
 =============
@@ -40,9 +44,9 @@ Configuration
 In order to work with the configuration file, you're best off publishing a copy
 with Artisan:
 
-```
+````
 $ php artisan vendor:publish
-```
+````
 
 The defaults are:
 
@@ -63,10 +67,15 @@ your production server, since it will slow down your site.
 In order to have different configs on your development and production servers, you'll do somethin
 like this:
 
-Open up less4laravel.config and change `'compile_frequency' => 'changed',` to
-````php
+Open up less4laravel.config and change 
+
+````
+	'compile_frequency' => 'changed',`
+```` to 
+````
     'compile_frequency' => env('LESS4LARAVEL_FREQUENCY', 'never'),
 ````
+
 You can use any environment variable name you want -- L4L_FREQ is an example.  The second variable
 is the default value and probably should be the value you want in production.
 
@@ -79,6 +88,12 @@ Usage
 =====
 
 In your view file, just call `Less::to('file')` to compile the .less file (if needed) and generate a link to the output css file.
+
+If you're using Laravel Blade, be sure to un-escape your call to Less: 
+
+````
+	{!! Less::to('file') !!}
+````
 
 To add properties to your link, just put them in an array as the second variable to the `to` function:
 `Less::to('filename',array('media'=>'print'))` will 
