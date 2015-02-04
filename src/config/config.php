@@ -24,9 +24,9 @@ return array(
     |--------------------------------------------------------------------------
     |
     | Where should we look for .less files?
-    | default: app/less
+    | default: resources/assets/less
     */
-    'source_folder' => 'etc/less',
+    'source_folder' => 'resources/assets/less',
 
     /*
     |--------------------------------------------------------------------------

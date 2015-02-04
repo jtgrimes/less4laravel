@@ -15,13 +15,13 @@ class Less {
 
 	public function to($filename, $attributes=array()) {
 		$compiler = new lessc;
-        $compiler->setFormatter($this->config->get('less4laravel::formatter','lessjs'));
+        $compiler->setFormatter($this->config->get('less4laravel.formatter','lessjs'));
 		$basePath = base_path();
-		$sourceFolder = $this->config->get('less4laravel::source_folder');
-		$targetFolder = $this->config->get('less4laravel::target_folder');
+		$sourceFolder = $this->config->get('less4laravel.source_folder');
+		$targetFolder = $this->config->get('less4laravel.target_folder');
 		$in = "$basePath/$sourceFolder/$filename.less";
 		$out = "$basePath/$targetFolder/$filename.css";
-		switch($this->config->get('less4laravel::compile_frequency')) {
+		switch($this->config->get('less4laravel.compile_frequency')) {
 			case "all":
 				$compiler->compileFile($in, $out);
 				break;
@@ -32,7 +32,7 @@ class Less {
 			default:
 				// do nothing
 		}
-		$linkFolder = $this->config->get('less4laravel::link_folder');
+		$linkFolder = $this->config->get('less4laravel.link_folder');
 		return $this->builder->style("$linkFolder/$filename.css",$attributes);
 	}
 }

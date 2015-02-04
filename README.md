@@ -49,7 +49,7 @@ The defaults are:
 * Recompile whenever the .less file is updated.  (Recompilation only happens when the
 named file is changed.  If other files are imported, changing them will *not* trigger
 a recompile.)
-* Store .less files in etc/less
+* Store .less files in resources/assets/less
 * Store generated .css files in public/css
 * Link to /css/filename.css
 * Don't minify the generated css file
