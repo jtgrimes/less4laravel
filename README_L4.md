@@ -1,26 +1,25 @@
 Less4Laravel
 ============
 
-Allows you to use [Less](http://lesscss.org//) in [Laravel 5](http://laravel.com/) with
+Allows you to use [Less](http://lesscss.org//) in [Laravel 4](http://laravel.com/) with
 no fuss, no muss.
-
-Documentation for using Less4Laravel with Laravel 4 is in the [README_L4.md](README_L4.md) file.
-
-License
-==========
-
-Less4Laravel is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT), the same license Laravel uses.
 
 Installation
 ============
 
-Via Composer
+Add `jtgrimes\less4laravel` as a requirement to composer.json:
 
-````
-$ composer require jtgrimes\less4laravel
-````
+```javascript
+{
+    "require": {
+        "Jtgrimes/less4laravel": "~0.3"
+    }
+}
+```
 
-Once Composer has installed or updated your packages you need to register
+Update your packages with `composer update` or install with `composer install`.
+
+Once Composer has installed or updated your packages you need to register 
 Less4Laravel with Laravel itself. Open up `app/config/app.php` and 
 find the providers key towards the bottom and add:
 
@@ -41,7 +40,7 @@ In order to work with the configuration file, you're best off publishing a copy
 with Artisan:
 
 ```
-$ php artisan vendor:publish jtgrimes/less4laravel
+$ php artisan config:publish jtgrimes/less4laravel
 ```
 
 The defaults are:
@@ -49,31 +48,17 @@ The defaults are:
 * Recompile whenever the .less file is updated.  (Recompilation only happens when the
 named file is changed.  If other files are imported, changing them will *not* trigger
 a recompile.)
-* Store .less files in etc/less
+* Store .less files in app/less
 * Store generated .css files in public/css
 * Link to /css/filename.css
 * Don't minify the generated css file
 
-All of these defaults can be changed in `/app/config/less4laravel.php`.
+All of these defaults can be changed in `/app/config/packages/Jtgrimes/less4laravel.php`.
 
 Additionally you can (and probably should) have different configurations for development 
 and production.  Specifically, you probably don't want to be generating css files on
 your production server, since it will slow down your site.
 
-In order to have different configs on your development and production servers, you'll do somethin
-like this:
-
-Open up less4laravel.config and change `'compile_frequency' => 'changed',` to
-````php
-    'compile_frequency' => env('LESS4LARAVEL_FREQUENCY', 'never'),
-````
-You can use any environment variable name you want -- L4L_FREQ is an example.  The second variable
-is the default value and probably should be the value you want in production.
-
-In your local `.env` file, add
-````php
-    'LESS4LARAVEL' => 'changed',
-````
 
 Usage
 =====
@@ -86,10 +71,15 @@ generate `<link media="print" type="text/css" rel="stylesheet" href="http://loca
 
 
 
+Artisan Commands
+================
+
+They're not implemented yet, but compiling .less files from Artisan is on the to-do list.
+
+
+
 Credits
 =======
 
 Less4Laravel doesn't exist without Leaf Corcoran's [lessphp](http://leafo.net/lessphp/).  
-lessphp doesn't exist without [LESS](http://lesscss.org/).
-Less4Laravel also requires Taylor Otwell's [Laravel](http://laravel.com/) framework.
-The readme is largely boosted from Rob Crowe's readme for (the very awesome) [TwigBridge](https://github.com/rcrowe/TwigBridge).
+lessphp doesn't exist without [LESS](http://lesscss.org/). Less4Laravel also requires [Laravel](http://laravel.com/). The readme is largely boosted from Rob Crowe's readme for (the very awesome) [TwigBridge](https://github.com/rcrowe/TwigBridge).
