@@ -70,8 +70,10 @@ like this:
 Open up less4laravel.config and change 
 
 ````
-	'compile_frequency' => 'changed',`
-```` to 
+	'compile_frequency' => 'changed',
+```` 
+to 
+
 ````
     'compile_frequency' => env('LESS4LARAVEL_FREQUENCY', 'never'),
 ````
@@ -80,7 +82,7 @@ You can use any environment variable name you want -- L4L_FREQ is an example.  T
 is the default value and probably should be the value you want in production.
 
 In your local `.env` file, add
-````php
+````
     'LESS4LARAVEL' => 'changed',
 ````
 
