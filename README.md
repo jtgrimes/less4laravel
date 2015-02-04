@@ -5,7 +5,7 @@ Allows you to use [Less](http://lesscss.org//) in [Laravel 5](http://laravel.com
 no fuss, no muss.
 
 ----------
-## If you're still using Laraavel 4, please lock your composer version to `'~0.3'`. Check out the  [README_L4.md](README_L4.md) file for more Laravel 4 instructions ##
+## If you're still using Laravel 4, please lock your composer version to `'~0.3'`. Check out the  [README_L4.md](README_L4.md) file for more Laravel 4 instructions ##
 
 ----------
 
