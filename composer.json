@@ -12,13 +12,13 @@
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "5.0.*",
-		"illuminate/html": "5.0.*",
+        "illuminate/html": "5.0.*",
         "leafo/lessphp": "~0.5"
 
     },
     "autoload": {
         "psr-4": {
-            "Jtgrimes\\Less4laravel": "src/"
+            "Jtgrimes\\Less4laravel\\": "src/"
         }
     },
     "minimum-stability": "stable"
