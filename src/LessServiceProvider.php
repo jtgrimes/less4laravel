@@ -19,7 +19,6 @@ class LessServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('jtgrimes/less4laravel');
 		$this->app['less'] = $this->app->share(function($app)
 		{
 			$config = $app['config'];

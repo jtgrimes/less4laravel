@@ -21,7 +21,7 @@ $ composer require jtgrimes\less4laravel
 ````
 
 Once Composer has installed or updated your packages you need to register
-Less4Laravel with Laravel itself. Open up `app/config/app.php` and 
+Less4Laravel with Laravel itself. Open up `/config/app.php` and
 find the providers key towards the bottom and add:
 
 ```php
@@ -41,7 +41,7 @@ In order to work with the configuration file, you're best off publishing a copy
 with Artisan:
 
 ```
-$ php artisan vendor:publish jtgrimes/less4laravel
+$ php artisan vendor:publish
 ```
 
 The defaults are:
