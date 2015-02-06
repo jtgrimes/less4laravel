@@ -1,6 +1,6 @@
 <?php namespace Jtgrimes\Less4laravel;
 
-use Illuminate\Html\HtmlBuilder;
+use Collective\Html\HtmlBuilder;
 use Illuminate\Support\ServiceProvider;
 
 class LessServiceProvider extends ServiceProvider {
