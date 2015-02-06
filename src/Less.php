@@ -1,8 +1,8 @@
 <?php namespace Jtgrimes\Less4laravel;
 
 use lessc;
-use Illuminate\Config\Repository as Config;
-use Illuminate\Html\HtmlBuilder as Html;
+use Illuminate\Contracts\Config\Repository as Config;
+use Collective\Html\HtmlBuilder as Html;
 
 class Less {
 	var $config;
