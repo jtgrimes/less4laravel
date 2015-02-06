@@ -24,7 +24,7 @@ Via Composer
 $ composer require jtgrimes\less4laravel
 ````
 
-Once Composer has installed or updated your packages you need to register
+Once Composer has installed or updated your packages, you need to register
 Less4Laravel with Laravel itself. Open up `/config/app.php` and
 find the providers key towards the bottom and add:
 
@@ -64,7 +64,7 @@ Additionally you can (and probably should) have different configurations for dev
 and production.  Specifically, you probably don't want to be generating css files on
 your production server, since it will slow down your site.
 
-In order to have different configs on your development and production servers, you'll do somethin
+In order to have different configs on your development and production servers, you'll do something
 like this:
 
 Open up less4laravel.config and change 
@@ -98,7 +98,7 @@ If you're using Laravel Blade, be sure to un-escape your call to Less:
 ````
 
 To add properties to your link, just put them in an array as the second variable to the `to` function:
-`Less::to('filename',array('media'=>'print'))` will 
+`Less::to('filename', ['media'=>'print'])` will
 generate `<link media="print" type="text/css" rel="stylesheet" href="http://localhost/css/filename.css">`
 
 
