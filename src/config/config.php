@@ -11,6 +11,8 @@ return array(
     |				Generally, use only when developing .less files
     |    changed:	re-compile when less files are changed.
     |				Generally, use this during most development
+    |    cached:    re-compile when any imported less files are changed.
+    |               The best option during development
     |	 never:		do not re-compile less files
     |				Generally, use this in production.  Once you've got your css
     |				files generated, don't change them in production
@@ -37,6 +39,16 @@ return array(
     | default: public/css
     */
     'target_folder' => 'public/css',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Cache folder
+    |--------------------------------------------------------------------------
+    |
+    | Where should we save cache file?
+    | default: storage/framework/cache
+    */
+    'cahce_folder' => 'storage/framework/cache',
 
     /*
     |--------------------------------------------------------------------------
