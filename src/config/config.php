@@ -10,15 +10,16 @@ return array(
     |    all: 		re-compile less files every time.
     |				Generally, use only when developing .less files
     |    changed:	re-compile when less files are changed.
-    |				Generally, use this during most development
+    |				Generally, use this option if your less files don't 
+	|				include other files
     |    cached:    re-compile when any imported less files are changed.
-    |               The best option during development
+    |				Generally, use this during most development
     |	 never:		do not re-compile less files
     |				Generally, use this in production.  Once you've got your css
     |				files generated, don't change them in production
     |
     */
-    'compile_frequency' => 'changed',
+    'compile_frequency' => 'cached',
 
     /*
     |--------------------------------------------------------------------------
@@ -48,7 +49,7 @@ return array(
     | Where should we save cache file?
     | default: storage/framework/cache
     */
-    'cahce_folder' => 'storage/framework/cache',
+    'cache_folder' => 'storage/framework/cache',
 
     /*
     |--------------------------------------------------------------------------
