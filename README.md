@@ -85,8 +85,8 @@ In your local `.env` file, add
 ````
 and in your production `.env` file, add
 ````
-    'LESS4LARAVEL_FREQUENCY' => 'never',
-````
+    'LESS4LARAVEL_FREQUENCY' => 'never'
+````.
 
 Usage
 =====
@@ -103,7 +103,11 @@ To add properties to your link, just put them in an array as the second variable
 `Less::to('filename', ['media'=>'print'])` will
 generate `<link media="print" type="text/css" rel="stylesheet" href="http://localhost/css/filename.css">`
 
+You can also use the `Less::link()` function if you don't want Less4Laravel generating your html:
 
+````
+	<link rel="stylesheet" href="{!!Less::link('filename')}!!">
+````
 
 Credits
 =======
