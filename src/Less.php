@@ -9,7 +9,7 @@ class Less {
 	var $builder;
 
 	public function __construct(Config $config, Html $builder) {
-		$this->config  = $config;
+		$this->config = $config;
 		$this->builder = $builder;
 	}
 
@@ -21,13 +21,13 @@ class Less {
 	public function link($filename, $attributes = array()) {
 		$compiler = new lessc;
 		$compiler->setFormatter($this->config->get('less4laravel.formatter', 'lessjs'));
-		$basePath     = base_path();
+		$basePath = base_path();
 		$sourceFolder = $this->config->get('less4laravel.source_folder');
 		$targetFolder = $this->config->get('less4laravel.target_folder');
-		$caheFolder   = $this->config->get('less4laravel.cahce_folder');
-		$in           = "$basePath/$sourceFolder/$filename.less";
-		$out          = "$basePath/$targetFolder/$filename.css";
-		$cache        = "$basePath/$caheFolder/$filename.less.cache";
+		$caheFolder = $this->config->get('less4laravel.cahce_folder');
+		$in = "$basePath/$sourceFolder/$filename.less";
+		$out = "$basePath/$targetFolder/$filename.css";
+		$cache = "$basePath/$caheFolder/$filename.less.cache";
 		switch ($this->config->get('less4laravel.compile_frequency')) {
 			case "all":
 				$compiler->compileFile($in, $out);
