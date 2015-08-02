@@ -106,7 +106,7 @@ generate `<link media="print" type="text/css" rel="stylesheet" href="http://loca
 You can also use the `Less::link()` function if you don't want Less4Laravel generating your html:
 
 ````
-	<link rel="stylesheet" href="{!!Less::link('filename')}!!">
+	<link rel="stylesheet" href="{!! Less::link('filename') !!}">
 ````
 
 Credits
