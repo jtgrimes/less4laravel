@@ -14,7 +14,7 @@ class Less {
 	}
 
 	public function to($filename, $attributes = array()) {
-		$link = $this->link($filename, $attributes = array());
+		$link = $this->link($filename, $attributes);
 		return $this->builder->style($link, $attributes);
 	}
 
