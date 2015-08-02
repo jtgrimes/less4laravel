@@ -22,14 +22,13 @@ class LessServiceProvider extends ServiceProvider {
 		$this->app['less'] = $this->app->share(function($app)
 		{
 			$config = $app['config'];
-			$filesystem = $app['filesystem'];
             if (isset($app['html'])) {
                 $builder = $app['html'];
             } else {
                 // if the app hasn't set up Laravel's HTML package, we'd better just instantiate a version
                 $builder = new HtmlBuilder($app['url']);
             }
-			return new Less($config, $filesystem, $builder);
+			return new Less($config, $builder);
 		});
         $this->publishes([
             __DIR__.'/config/config.php' => config_path('less4laravel.php'),
