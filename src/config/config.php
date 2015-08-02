@@ -63,17 +63,16 @@ return array(
 
     /*
     |--------------------------------------------------------------------------
-    | Formatter
+    | Mininify
     |--------------------------------------------------------------------------
     |
 	| This option controls the formatting of the output css file
 	| Possible values:
-	|    lessjs:	 Same style used in LESS for JavaScript (default)
-	|    compressed: Removes all unnecessary whitespace (minifies)
-	|	 classic:	 The original LessPHP formatter
-    | default: lessjs
+	|    true:	 Strip comments and whitespace out of the output file
+	|    false:  Include comments and whitespace in the output
+    | default: false
     */
-    'formatter' => 'lessjs',
+    'minify' => false,
 
 
 );

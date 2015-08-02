@@ -11,9 +11,9 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "~5.0",
+        "illuminate/contracts": "~5.0",
         "laravelcollective/html": "~5.0",
-        "leafo/lessphp": "~0.5"
+        "oyejorge/less.php": "~1.5"
 
     },
     "autoload": {
@@ -21,5 +21,9 @@
             "Jtgrimes\\Less4laravel\\": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "^4.7",
+        "mockery/mockery": "^0.9.4"
+    }
 }
