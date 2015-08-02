@@ -86,7 +86,7 @@ In your local `.env` file, add
 and in your production `.env` file, add
 ````
     'LESS4LARAVEL_FREQUENCY' => 'never'
-````.
+````
 
 Usage
 =====
